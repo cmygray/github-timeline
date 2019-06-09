@@ -1,12 +1,14 @@
 {
-  "name": "vue-boilerplate",
+  "name": "github-timeline",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "test:unit:ci": "yarn test:unit --ci --runInBand",
+    "deploy": "sls deploy"
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -33,6 +35,8 @@
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
+    "serverless": "^1.44.1",
+    "serverless-s3-sync": "^1.8.0",
     "ts-jest": "^23.0.0",
     "typescript": "^3.4.3",
     "vue-template-compiler": "^2.6.10"

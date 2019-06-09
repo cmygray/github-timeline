@@ -1,0 +1,124 @@
+service: github-timeline
+
+frameworkVersion: ">= 1.23.0 < 2.0.0"
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: ap-northeast-2
+  environment:
+    NODE_ENV: production
+
+plugins:
+  - serverless-s3-sync
+
+custom:
+  domainName: cmygray.kr
+  fullDomainName: ${self:service}.${self:custom.domainName}
+  bucketName: ${self:custom.fullDomainName}
+  s3Sync:
+    - bucketName: ${self:custom.bucketName}
+      localDir: dist
+
+resources:
+  Resources:
+    GithubTimelineAppCloudFrontOriginAccessIdentity:
+      Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+      Properties:
+        CloudFrontOriginAccessIdentityConfig:
+          Comment: ${self:service}
+    GithubTimelineAppBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:custom.bucketName}
+        AccessControl: PublicRead
+        WebsiteConfiguration:
+          IndexDocument: index.html
+          ErrorDocument: index.html
+    GithubTimelineAppBucketPolicy:
+      Type: AWS::S3::BucketPolicy
+      DependsOn:
+        - GithubTimelineAppCloudFrontOriginAccessIdentity
+      Properties:
+        Bucket:
+          Ref: GithubTimelineAppBucket
+        PolicyDocument:
+          Statement:
+            - Sid: CanonicalUserReadGetObject
+              Effect: Allow
+              Principal:
+                CanonicalUser:
+                  Fn::GetAtt: [ GithubTimelineAppCloudFrontOriginAccessIdentity, S3CanonicalUserId ]
+              Action:
+                - s3:GetObject
+              Resource:
+                Fn::Join:
+                  - ''
+                  - - 'arn:aws:s3:::'
+                    - Ref: GithubTimelineAppBucket
+                    - '/*'
+    GithubTimelineAppCloudFrontDistribution:
+      Type: AWS::CloudFront::Distribution
+      DependsOn:
+        - GithubTimelineAppBucketPolicy
+      Properties:
+        DistributionConfig:
+          Aliases:
+            - ${self:custom.fullDomainName}
+          CustomErrorResponses:
+            - ErrorCode: 404
+              ResponseCode: 200
+              ResponsePagePath: /index.html
+          DefaultCacheBehavior:
+            AllowedMethods:
+              - GET
+              - HEAD
+            Compress: true
+            TargetOriginId: ${self:service}
+            ForwardedValues:
+              QueryString: false
+              Cookies:
+                Forward: none
+            ViewerProtocolPolicy: redirect-to-https
+          DefaultRootObject: index.html
+          Enabled: true
+          HttpVersion: http2
+          Logging:
+            IncludeCookies: 'false'
+            Bucket: ${self:custom.bucketName}.s3.amazonaws.com
+            Prefix: cf-logs
+          Origins:
+            - DomainName: ${self:custom.bucketName}.s3.amazonaws.com
+              Id: ${self:service}
+              S3OriginConfig:
+                OriginAccessIdentity:
+                  Fn::Join:
+                    - ''
+                    - - 'origin-access-identity/cloudfront/'
+                      - Ref: GithubTimelineAppCloudFrontOriginAccessIdentity
+          ViewerCertificate:
+            AcmCertificateArn: arn:aws:acm:us-east-1:326065082801:certificate/468a1825-1a58-46e1-9048-a266a82750dc
+            SslSupportMethod: sni-only
+
+    GithubTimelineAppDnsRecord:
+      Type: AWS::Route53::RecordSetGroup
+      DependsOn:
+        - GithubTimelineAppCloudFrontDistribution
+      Properties:
+        HostedZoneName: '${self:custom.domainName}.'
+        RecordSets:
+          - Name: ${self:custom.fullDomainName}
+            Type: A
+            AliasTarget:
+              HostedZoneId: Z2FDTNDATAQYW2 # https://docs.aws.amazon.com/ko_kr/general/latest/gr/rande.html#cf_region
+              DNSName:
+                Fn::GetAtt: [ GithubTimelineAppCloudFrontDistribution, DomainName ]
+  Outputs:
+    GithubTimelineAppBucket:
+      Value:
+        Ref: GithubTimelineAppBucket
+    GithubTimelineAppCloudFrontDistributionDomainName:
+      Value:
+        Fn::GetAtt: [ GithubTimelineAppCloudFrontDistribution, DomainName ]
+    FullDomain:
+      Value: ${self:custom.fullDomainName}

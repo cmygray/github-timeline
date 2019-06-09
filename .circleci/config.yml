@@ -1,0 +1,140 @@
+version: 2
+
+aliases:
+  - &restore-yarn-cache
+    keys:
+      - v1-yarn-cache-{{ arch }}-{{ checksum "yarn.lock" }}
+      - v1-yarn-cache-{{ arch }}
+  - &save-yarn-cache
+    paths:
+      - ~/.cache/yarn
+    key: v1-yarn-cache-{{ arch }}-{{ checksum "yarn.lock" }}
+  - &restore-node-modules
+    keys:
+      - v1-node-modules-{{ arch }}-{{ checksum "package.json" }}
+  - &save-node-modules
+    paths:
+      - node_modules
+    key:
+      - v1-node-modules{{ arch }}-{{ checksum "package.json" }}
+  - &yarn
+    name: Install dependencies
+    command: |
+      yarn install --non-interactive --cache-folder ~/.cache/yarn
+  - &install-reporter
+    name:  Download cc-test-reporter
+    command: |
+      mkdir -p tmp
+      curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./tmp/cc-test-reporter
+      chmod +x ./tmp/cc-test-reporter
+
+defaults: &defaults
+  working_directory: ~/github-timeline
+
+js_defaults: &js_defaults
+  <<: *defaults
+  docker:
+    - image: circleci/node:11.14.0-stretch-browsers
+
+jobs:
+  checkout_code:
+    <<: *js_defaults
+    steps:
+      - checkout
+      - restore-cache: *restore-yarn-cache
+      - run: *yarn
+      - run: *install-reporter
+      - save-cache: *save-yarn-cache
+      - persist_to_workspace:
+          root: .
+          paths: .
+
+  lint:
+    <<: *js_defaults
+    steps:
+      - attach_workspace:
+          at: ~/github-timeline
+      - run:
+          name: Lint scripts
+          command: |
+            mkdir -p ~/github-timeline/reports/junit/eslint
+            yarn lint --format junit -o ~/github-timeline/reports/junit/eslint/results.xml
+      - store_test_results:
+          path: ~/github-timeline/reports/junit/eslint
+      - store_artifacts:
+          path: ~/github-timeline/reports/junit/eslint
+
+  unit-test:
+    <<: *js_defaults
+    steps:
+      - attach_workspace:
+          at: ~/github-timeline
+      - run:
+          name: Unit testing
+          command: |
+            yarn test:unit:ci
+            ./tmp/cc-test-reporter format-coverage -t lcov -o ./tmp/codeclimate.unit.json ./coverage/unit/lcov.info
+      - store_test_results:
+          path: ~/github-timeline/coverage/unit
+      - store_artifacts:
+          path: ~/github-timeline/coverage/unit
+      - persist_to_workspace:
+          root: .
+          paths:
+            - ./tmp/codeclimate.unit.json
+
+  upload-coverage:
+    <<: *js_defaults
+    steps:
+      - attach_workspace:
+          at: ~/github-timeline
+      - run:
+          name: Upload coverage results to Code Climate
+          command: |
+            # ./tmp/cc-test-reporter sum-coverage ./tmp/codeclimate.*.json -p 2 -o ./tmp/codeclimate.total.json
+            # ./tmp/cc-test-reporter upload-coverage -i ./tmp/codeclimate.total.json
+            ./tmp/cc-test-reporter upload-coverage -i ./tmp/codeclimate.unit.json
+
+  deploy:
+    <<: *js_defaults
+    steps:
+      - attach_workspace:
+          at: ~/github-timeline
+      - run:
+          name: Install aws cli
+          command: |
+            sudo apt-get install python-dev python-pip
+            sudo pip install awscli
+      - run:
+          name: Deploy
+          environment:
+            NODE_ENV: production
+            AWS_REGION: ap-northeast-2
+          command: |
+            set -ex
+
+            yarn build
+            yarn deploy
+            aws cloudfront create-invalidation --distribution-id E3GZEG7RQCVAS3 --paths /index.html
+          no_output_timeout: 30m
+
+workflows:
+  version: 2
+  build-and-test:
+    jobs:
+      - checkout_code
+#      - lint:
+#          requires:
+#            - checkout_code
+#      - unit-test:
+#          requires:
+#            - checkout_code
+#      - upload-coverage:
+#          requires:
+#            - unit-test
+      - deploy:
+          context: aws-circleci-credentials
+          requires:
+            - checkout_code
+#            - lint
+#            - unit-test
