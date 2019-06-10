@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home.vue renders as expected 1`] = `
+<section class="container home">
+  <h1>GitHub timeline</h1>
+  <form>
+    <div class="v-input v-input--is-focused theme--light v-text-field v-text-field--placeholder primary--text">
+      <div class="v-input__control">
+        <div class="v-input__slot">
+          <div class="v-text-field__slot"><label aria-hidden="true" class="v-label v-label--active theme--light primary--text" style="left: 0px; position: absolute;">GitHub ID</label><input aria-label="GitHub ID" autofocus="autofocus" placeholder="cmygray" type="text"></div>
+        </div>
+        <div class="v-text-field__details">
+          <div class="v-messages theme--light primary--text"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
+        </div>
+      </div>
+    </div> <button type="submit" class="v-btn v-btn--block v-btn--contained theme--light v-size--default primary"><span class="v-btn__content">Generate</span></button>
+  </form>
+</section>
+`;
