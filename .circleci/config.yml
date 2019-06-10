@@ -123,18 +123,17 @@ workflows:
   build-and-test:
     jobs:
       - checkout_code
-#      - lint:
-#          requires:
-#            - checkout_code
-#      - unit-test:
-#          requires:
-#            - checkout_code
-#      - upload-coverage:
-#          requires:
-#            - unit-test
+      - lint:
+          requires:
+            - checkout_code
+      - unit-test:
+          requires:
+            - checkout_code
+      - upload-coverage:
+          requires:
+            - unit-test
       - deploy:
           context: aws-circleci-credentials
           requires:
-            - checkout_code
-#            - lint
-#            - unit-test
+            - lint
+            - unit-test

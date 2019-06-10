@@ -24,4 +24,8 @@ module.exports = {
       babelConfig: true,
     },
   },
+  collectCoverage: true,
+  coverageDirectory: 'coverage/unit',
+  coverageReporters: ['json', 'lcov', 'text'],
+  coveragePathIgnorePatterns: ['router.ts'],
 };

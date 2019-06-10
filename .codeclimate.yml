@@ -1,0 +1,9 @@
+plugins:
+  eslint:
+    enabled: true
+
+exclude_patterns:
+  - "*.config.js"
+  - "node_modules/"
+  - "public/"
+  - "tests/**/*"
