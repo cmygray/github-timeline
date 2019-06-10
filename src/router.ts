@@ -12,7 +12,16 @@ export default new Router({
       path: '/',
       name: 'home',
       component: () =>
-        import(/* webpackChunkName: "about" */ './views/Home.vue'),
+        import(/* webpackChunkName: "home" */ './views/Home.vue'),
+    },
+    {
+      path: '/repos',
+      name: 'repos.index',
+      component: () =>
+        import(/* webpackChunkName: "repos" */ './views/RepoList.vue'),
+      props: route => ({
+        userId: route.query.userId,
+      }),
     },
   ],
 });
