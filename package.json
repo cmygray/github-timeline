@@ -11,7 +11,13 @@
     "deploy": "sls deploy"
   },
   "dependencies": {
+    "apollo-cache-inmemory": "^1.6.2",
+    "apollo-client": "^2.6.2",
+    "apollo-link-error": "^1.1.10",
+    "apollo-link-http": "^1.5.14",
     "core-js": "^2.6.5",
+    "graphql": "^14.3.1",
+    "graphql-tag": "^2.10.1",
     "reflect-metadata": "^0.1.13",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
@@ -32,6 +38,7 @@
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
+    "babel-plugin-graphql-tag": "^2.4.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
