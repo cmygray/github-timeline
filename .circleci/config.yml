@@ -113,6 +113,8 @@ jobs:
           command: |
             set -ex
 
+            chmod +x ./env.sh
+            ./env.sh
             yarn build
             yarn deploy
             aws cloudfront create-invalidation --distribution-id E3GZEG7RQCVAS3 --paths /index.html

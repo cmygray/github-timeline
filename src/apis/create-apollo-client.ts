@@ -19,7 +19,7 @@ export function createApolloClient(): ApolloClient<NormalizedCacheObject> {
       new HttpLink({
         uri: 'https://api.github.com/graphql',
         headers: {
-          authorization: 'Bearer 54c6a129a9fb78669754185602da69c1ad799e4b',
+          authorization: `Bearer ${process.env.VUE_APP_GITHUB_API_TOKEN}`,
         },
       })
     ),
