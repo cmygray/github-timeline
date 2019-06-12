@@ -8,6 +8,7 @@ import 'vuetify/dist/vuetify.min.css';
 import App from './App.vue';
 import router from './router';
 import './plugins';
+import './filters';
 import { createStore } from '@/store';
 
 Vue.config.productionTip = false;
