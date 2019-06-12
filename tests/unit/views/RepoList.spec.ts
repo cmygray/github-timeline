@@ -10,7 +10,7 @@ Vue.use(Vuetify);
 
 const localVue = createLocalVue();
 localVue.use(Vuex);
-// @ts-ignore-next-line
+// @ts-ignore-next-lineA
 const vuetify = new Vuetify();
 
 describe('Home.vue', () => {

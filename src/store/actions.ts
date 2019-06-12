@@ -20,6 +20,8 @@ export const actions: ActionTree<RootState, RootState> = {
       query: USER_REPOSITORIES_QUERY,
     });
 
+    if (!data.user) return [];
+
     return dispatch('setRepositories', data);
   },
 
