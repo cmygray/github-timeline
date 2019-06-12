@@ -7,6 +7,7 @@ Object {
       Object {
         "createdAt": "2019-06-10T08:44:44Z",
         "description": "Create GraphQL schema and resolvers with TypeScript, using classes and decorators!",
+        "id": "MDEwOlJlcG9zaXRvcnkxOTExMzA0MTQ=",
         "isFork": true,
         "name": "type-graphql",
         "stargazers": Object {
@@ -17,6 +18,7 @@ Object {
       Object {
         "createdAt": "2019-06-09T07:19:12Z",
         "description": null,
+        "id": "MDEwOlJlcG9zaXRvcnkxOTA5NzYxMzg=",
         "isFork": false,
         "name": "github-timeline",
         "stargazers": Object {
@@ -27,6 +29,7 @@ Object {
       Object {
         "createdAt": "2019-06-07T07:53:37Z",
         "description": "A boilerplate for Vue.js using typescript, jest, router, Vuex...",
+        "id": "MDEwOlJlcG9zaXRvcnkxOTA3MDc1MjI=",
         "isFork": false,
         "name": "vue-boilerplate",
         "stargazers": Object {
@@ -37,6 +40,7 @@ Object {
       Object {
         "createdAt": "2019-04-25T11:06:37Z",
         "description": "Simple Vue.js authentication library",
+        "id": "MDEwOlJlcG9zaXRvcnkxODM0MTczODY=",
         "isFork": true,
         "name": "vue-authenticate",
         "stargazers": Object {
@@ -47,6 +51,7 @@ Object {
       Object {
         "createdAt": "2019-04-18T12:42:29Z",
         "description": "Delightful JavaScript Testing.",
+        "id": "MDEwOlJlcG9zaXRvcnkxODIwODU4MTI=",
         "isFork": true,
         "name": "jest",
         "stargazers": Object {
@@ -57,6 +62,7 @@ Object {
       Object {
         "createdAt": "2019-04-02T05:16:18Z",
         "description": null,
+        "id": "MDEwOlJlcG9zaXRvcnkxNzkwMDM3MzY=",
         "isFork": true,
         "name": "reststate-client",
         "stargazers": Object {
@@ -67,6 +73,7 @@ Object {
       Object {
         "createdAt": "2019-02-11T09:05:16Z",
         "description": "Model Driven State Management",
+        "id": "MDEwOlJlcG9zaXRvcnkxNzAwOTg1NjY=",
         "isFork": true,
         "name": "mobx-state-tree",
         "stargazers": Object {
@@ -77,6 +84,7 @@ Object {
       Object {
         "createdAt": "2019-01-18T01:49:29Z",
         "description": "Automatic and enhanced Google Analytics tracking for common user interactions on the web.",
+        "id": "MDEwOlJlcG9zaXRvcnkxNjYzMjU0NzI=",
         "isFork": true,
         "name": "autotrack",
         "stargazers": Object {
@@ -87,6 +95,7 @@ Object {
       Object {
         "createdAt": "2018-12-09T05:00:34Z",
         "description": "👩‍💻 👨‍💻 This is a repository for developing pyconkr frontend.",
+        "id": "MDEwOlJlcG9zaXRvcnkxNjEwMDU5NDM=",
         "isFork": false,
         "name": "pyconkr-web",
         "stargazers": Object {
@@ -97,6 +106,7 @@ Object {
       Object {
         "createdAt": "2018-10-07T07:46:13Z",
         "description": "Dash and Zeal documentation integration in Visual Studio Code",
+        "id": "MDEwOlJlcG9zaXRvcnkxNTE5MTc4NDk=",
         "isFork": true,
         "name": "vscode-dash",
         "stargazers": Object {

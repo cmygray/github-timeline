@@ -20,6 +20,7 @@ export interface UserRepositoriesVariable {
 // }
 
 export interface Repository {
+  id: string;
   name: string;
   description: string | null;
   isFork: boolean;

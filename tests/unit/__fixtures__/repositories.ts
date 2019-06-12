@@ -1,7 +1,8 @@
-import { Repository, UserRepositoriesData } from '@/models';
+import { Repository } from '@/models';
 
 export const repositories: Repository[] = [
   {
+    "id": "MDEwOlJlcG9zaXRvcnkxOTExMzA0MTQ=",
     "name": "type-graphql",
     "description": "Create GraphQL schema and resolvers with TypeScript, using classes and decorators!",
     "isFork": true,
@@ -12,6 +13,7 @@ export const repositories: Repository[] = [
     }
   },
   {
+    "id": "MDEwOlJlcG9zaXRvcnkxOTA5NzYxMzg=",
     "name": "github-timeline",
     "description": null,
     "isFork": false,
@@ -22,6 +24,7 @@ export const repositories: Repository[] = [
     }
   },
   {
+    "id": "MDEwOlJlcG9zaXRvcnkxOTA3MDc1MjI=",
     "name": "vue-boilerplate",
     "description": "A boilerplate for Vue.js using typescript, jest, router, Vuex...",
     "isFork": false,
@@ -32,6 +35,7 @@ export const repositories: Repository[] = [
     }
   },
   {
+    "id": "MDEwOlJlcG9zaXRvcnkxODM0MTczODY=",
     "name": "vue-authenticate",
     "description": "Simple Vue.js authentication library",
     "isFork": true,
@@ -42,6 +46,7 @@ export const repositories: Repository[] = [
     }
   },
   {
+    "id": "MDEwOlJlcG9zaXRvcnkxODIwODU4MTI=",
     "name": "jest",
     "description": "Delightful JavaScript Testing.",
     "isFork": true,
@@ -52,6 +57,7 @@ export const repositories: Repository[] = [
     }
   },
   {
+    "id": "MDEwOlJlcG9zaXRvcnkxNzkwMDM3MzY=",
     "name": "reststate-client",
     "description": null,
     "isFork": true,
@@ -62,6 +68,7 @@ export const repositories: Repository[] = [
     }
   },
   {
+    "id": "MDEwOlJlcG9zaXRvcnkxNzAwOTg1NjY=",
     "name": "mobx-state-tree",
     "description": "Model Driven State Management",
     "isFork": true,
@@ -72,6 +79,7 @@ export const repositories: Repository[] = [
     }
   },
   {
+    "id": "MDEwOlJlcG9zaXRvcnkxNjYzMjU0NzI=",
     "name": "autotrack",
     "description": "Automatic and enhanced Google Analytics tracking for common user interactions on the web.",
     "isFork": true,
@@ -82,6 +90,7 @@ export const repositories: Repository[] = [
     }
   },
   {
+    "id": "MDEwOlJlcG9zaXRvcnkxNjEwMDU5NDM=",
     "name": "pyconkr-web",
     "description": "👩‍💻 👨‍💻 This is a repository for developing pyconkr frontend.",
     "isFork": false,
@@ -92,6 +101,7 @@ export const repositories: Repository[] = [
     }
   },
   {
+    "id": "MDEwOlJlcG9zaXRvcnkxNTE5MTc4NDk=",
     "name": "vscode-dash",
     "description": "Dash and Zeal documentation integration in Visual Studio Code",
     "isFork": true,
@@ -101,4 +111,4 @@ export const repositories: Repository[] = [
       "totalCount": 0
     }
   }
-]
+];

@@ -19,6 +19,7 @@ export const USER_REPOSITORIES_QUERY = gql`
           hasNextPage
         }
         nodes {
+          id
           name
           description
           isFork
