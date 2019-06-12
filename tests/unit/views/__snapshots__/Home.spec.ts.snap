@@ -13,7 +13,7 @@ exports[`Home.vue renders as expected 1`] = `
           <div class="v-messages theme--light primary--text"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
         </div>
       </div>
-    </div> <button type="submit" class="v-btn v-btn--block v-btn--contained theme--light v-size--default primary"><span class="v-btn__content">Generate</span></button>
+    </div> <button disabled="disabled" type="submit" class="v-btn v-btn--block v-btn--contained v-btn--disabled theme--light v-size--default primary"><span class="v-btn__content">Generate</span></button>
   </form>
 </section>
 `;
