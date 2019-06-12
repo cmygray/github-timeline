@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mutations SET_REPOSITORIES sets repositories of an owner 1`] = `
+Object {
+  "repositories": Object {
+    "cmygray": Array [
+      Object {
+        "createdAt": "2019-06-10T08:44:44Z",
+        "description": "Create GraphQL schema and resolvers with TypeScript, using classes and decorators!",
+        "isFork": true,
+        "name": "type-graphql",
+        "stargazers": Object {
+          "totalCount": 0,
+        },
+        "updatedAt": "2019-06-10T08:44:47Z",
+      },
+      Object {
+        "createdAt": "2019-06-09T07:19:12Z",
+        "description": null,
+        "isFork": false,
+        "name": "github-timeline",
+        "stargazers": Object {
+          "totalCount": 0,
+        },
+        "updatedAt": "2019-06-10T04:54:46Z",
+      },
+      Object {
+        "createdAt": "2019-06-07T07:53:37Z",
+        "description": "A boilerplate for Vue.js using typescript, jest, router, Vuex...",
+        "isFork": false,
+        "name": "vue-boilerplate",
+        "stargazers": Object {
+          "totalCount": 0,
+        },
+        "updatedAt": "2019-06-09T06:20:56Z",
+      },
+      Object {
+        "createdAt": "2019-04-25T11:06:37Z",
+        "description": "Simple Vue.js authentication library",
+        "isFork": true,
+        "name": "vue-authenticate",
+        "stargazers": Object {
+          "totalCount": 0,
+        },
+        "updatedAt": "2019-04-25T11:06:40Z",
+      },
+      Object {
+        "createdAt": "2019-04-18T12:42:29Z",
+        "description": "Delightful JavaScript Testing.",
+        "isFork": true,
+        "name": "jest",
+        "stargazers": Object {
+          "totalCount": 0,
+        },
+        "updatedAt": "2019-04-18T12:42:35Z",
+      },
+      Object {
+        "createdAt": "2019-04-02T05:16:18Z",
+        "description": null,
+        "isFork": true,
+        "name": "reststate-client",
+        "stargazers": Object {
+          "totalCount": 0,
+        },
+        "updatedAt": "2019-04-04T02:09:26Z",
+      },
+      Object {
+        "createdAt": "2019-02-11T09:05:16Z",
+        "description": "Model Driven State Management",
+        "isFork": true,
+        "name": "mobx-state-tree",
+        "stargazers": Object {
+          "totalCount": 0,
+        },
+        "updatedAt": "2019-02-11T09:05:19Z",
+      },
+      Object {
+        "createdAt": "2019-01-18T01:49:29Z",
+        "description": "Automatic and enhanced Google Analytics tracking for common user interactions on the web.",
+        "isFork": true,
+        "name": "autotrack",
+        "stargazers": Object {
+          "totalCount": 0,
+        },
+        "updatedAt": "2019-01-18T01:49:32Z",
+      },
+      Object {
+        "createdAt": "2018-12-09T05:00:34Z",
+        "description": "👩‍💻 👨‍💻 This is a repository for developing pyconkr frontend.",
+        "isFork": false,
+        "name": "pyconkr-web",
+        "stargazers": Object {
+          "totalCount": 18,
+        },
+        "updatedAt": "2019-06-11T09:47:46Z",
+      },
+      Object {
+        "createdAt": "2018-10-07T07:46:13Z",
+        "description": "Dash and Zeal documentation integration in Visual Studio Code",
+        "isFork": true,
+        "name": "vscode-dash",
+        "stargazers": Object {
+          "totalCount": 0,
+        },
+        "updatedAt": "2018-10-25T10:12:53Z",
+      },
+    ],
+  },
+}
+`;

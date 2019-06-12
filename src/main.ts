@@ -7,14 +7,14 @@ import 'vuetify/dist/vuetify.min.css';
 
 import App from './App.vue';
 import router from './router';
-import store from './store';
 import './plugins';
+import { createStore } from '@/store';
 
 Vue.config.productionTip = false;
 
 new Vue({
   router,
-  store,
+  store: createStore(),
   // @ts-ignore
   vuetify: new Vuetify(),
   /* eslint-disable-next-line @typescript-eslint/explicit-function-return-type */
