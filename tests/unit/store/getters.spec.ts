@@ -6,6 +6,7 @@ describe('getters', () => {
   describe('repositoriesByOwnerId', () => {
     const OWNER_ID = 'cmygray';
     const state: RootState = {
+      pagination: {},
       repositories: {
         [OWNER_ID]: repositories
       }

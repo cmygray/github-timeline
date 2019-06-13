@@ -22,7 +22,22 @@ export const actions: ActionTree<RootState, RootState> = {
 
     if (!data.user) throw new Error('User is not found');
 
+    const {
+      user: {
+        repositories: { totalCount, pageInfo },
+      },
+    } = data;
+
+    await dispatch('setPagination', { totalCount, pageInfo });
+
     return dispatch('setRepositories', data);
+  },
+
+  async setPagination({ commit }, { totalCount, pageInfo }): Promise<void> {
+    commit('SET_PAGINATION', {
+      totalCount,
+      pageInfo,
+    });
   },
 
   async setRepositories(

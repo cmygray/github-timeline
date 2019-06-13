@@ -3,7 +3,7 @@ export interface UserRepositoriesData {
     login: string;
     repositories: {
       nodes: Repository[];
-    } /* & Pagination */;
+    } & PageInfo;
   };
 }
 
@@ -11,13 +11,13 @@ export interface UserRepositoriesVariable {
   userId: string;
 }
 
-// export interface Pagination {
-//   totalCount: number;
-//   pageInfo: {
-//     endCursor: string;
-//     hasNextPage: boolean;
-//   };
-// }
+export interface PageInfo {
+  totalCount: number;
+  pageInfo: {
+    endCursor: string;
+    hasNextPage: boolean;
+  };
+}
 
 export interface Repository {
   id: string;
