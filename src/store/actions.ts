@@ -20,7 +20,7 @@ export const actions: ActionTree<RootState, RootState> = {
       query: USER_REPOSITORIES_QUERY,
     });
 
-    if (!data.user) return [];
+    if (!data.user) throw new Error('User is not found');
 
     return dispatch('setRepositories', data);
   },

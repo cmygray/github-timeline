@@ -2,6 +2,7 @@
 
 exports[`Home.vue renders as expected 1`] = `
 <section class="container home">
+  <!---->
   <h1>GitHub timeline</h1>
   <form>
     <div class="v-input v-input--is-focused theme--light v-text-field v-text-field--placeholder primary--text">
