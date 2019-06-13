@@ -1,6 +1,9 @@
 <template>
   <v-container tag="section" class="repo-list">
-    <v-timeline>
+    <v-timeline
+      v-infinite-scroll="loadMore"
+      :infinite-scroll-immediate-check="false"
+    >
       <v-timeline-item v-for="repo in repositories" :key="repo.id" small left>
         <v-card>
           <v-card-title>{{ repo.name }}</v-card-title>
@@ -31,9 +34,13 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { Getter } from 'vuex-class';
+import infiniteScroll from 'vue-infinite-scroll';
+
 import { Repository } from '@/models';
 
-@Component
+@Component({
+  directives: { infiniteScroll },
+})
 export default class Home extends Vue {
   @Prop()
   userId: string;
@@ -44,5 +51,11 @@ export default class Home extends Vue {
   get repositories() {
     return this.getRepositoriesByOwnerId(this.userId);
   }
+
+  loadNextRepositories() {
+    console.log('load more=============');
+  }
 }
 </script>
+
+<style lang="scss"></style>

@@ -4,11 +4,12 @@ import { createApolloClient } from '@/apis/create-apollo-client';
 export const client = createApolloClient();
 
 export const USER_REPOSITORIES_QUERY = gql`
-  query($userId: String!) {
-    user(login: $userId) {
+  query($userId: String!, $endCursor: String) {
+    user(login: $userId, after: $endCursor) {
       login
       repositories(
         first: 10
+        after
         affiliations: [OWNER]
         privacy: PUBLIC
         orderBy: { field: CREATED_AT, direction: DESC }
