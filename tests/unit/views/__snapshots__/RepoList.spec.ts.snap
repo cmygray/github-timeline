@@ -23,7 +23,7 @@ exports[`Home.vue renders as expected 1`] = `
           <div class="v-timeline-item__inner-dot primary"></div>
         </div>
       </div>
-      <div class="v-timeline-item__opposite">2019-06-10T08:44:44Z</div>
+      <div class="v-timeline-item__opposite">2019.06.10</div>
     </div>
     <div class="v-timeline-item v-timeline-item--before theme--light">
       <div class="v-timeline-item__body">
@@ -44,7 +44,7 @@ exports[`Home.vue renders as expected 1`] = `
           <div class="v-timeline-item__inner-dot primary"></div>
         </div>
       </div>
-      <div class="v-timeline-item__opposite">2019-06-09T07:19:12Z</div>
+      <div class="v-timeline-item__opposite">2019.06.09</div>
     </div>
     <div class="v-timeline-item v-timeline-item--before theme--light">
       <div class="v-timeline-item__body">
@@ -65,7 +65,7 @@ exports[`Home.vue renders as expected 1`] = `
           <div class="v-timeline-item__inner-dot primary"></div>
         </div>
       </div>
-      <div class="v-timeline-item__opposite">2019-06-07T07:53:37Z</div>
+      <div class="v-timeline-item__opposite">2019.06.07</div>
     </div>
     <div class="v-timeline-item v-timeline-item--before theme--light">
       <div class="v-timeline-item__body">
@@ -87,7 +87,7 @@ exports[`Home.vue renders as expected 1`] = `
           <div class="v-timeline-item__inner-dot primary"></div>
         </div>
       </div>
-      <div class="v-timeline-item__opposite">2019-04-25T11:06:37Z</div>
+      <div class="v-timeline-item__opposite">2019.04.25</div>
     </div>
     <div class="v-timeline-item v-timeline-item--before theme--light">
       <div class="v-timeline-item__body">
@@ -109,7 +109,7 @@ exports[`Home.vue renders as expected 1`] = `
           <div class="v-timeline-item__inner-dot primary"></div>
         </div>
       </div>
-      <div class="v-timeline-item__opposite">2019-04-18T12:42:29Z</div>
+      <div class="v-timeline-item__opposite">2019.04.18</div>
     </div>
     <div class="v-timeline-item v-timeline-item--before theme--light">
       <div class="v-timeline-item__body">
@@ -131,7 +131,7 @@ exports[`Home.vue renders as expected 1`] = `
           <div class="v-timeline-item__inner-dot primary"></div>
         </div>
       </div>
-      <div class="v-timeline-item__opposite">2019-04-02T05:16:18Z</div>
+      <div class="v-timeline-item__opposite">2019.04.02</div>
     </div>
     <div class="v-timeline-item v-timeline-item--before theme--light">
       <div class="v-timeline-item__body">
@@ -153,7 +153,7 @@ exports[`Home.vue renders as expected 1`] = `
           <div class="v-timeline-item__inner-dot primary"></div>
         </div>
       </div>
-      <div class="v-timeline-item__opposite">2019-02-11T09:05:16Z</div>
+      <div class="v-timeline-item__opposite">2019.02.11</div>
     </div>
     <div class="v-timeline-item v-timeline-item--before theme--light">
       <div class="v-timeline-item__body">
@@ -175,7 +175,7 @@ exports[`Home.vue renders as expected 1`] = `
           <div class="v-timeline-item__inner-dot primary"></div>
         </div>
       </div>
-      <div class="v-timeline-item__opposite">2019-01-18T01:49:29Z</div>
+      <div class="v-timeline-item__opposite">2019.01.18</div>
     </div>
     <div class="v-timeline-item v-timeline-item--before theme--light">
       <div class="v-timeline-item__body">
@@ -196,7 +196,7 @@ exports[`Home.vue renders as expected 1`] = `
           <div class="v-timeline-item__inner-dot primary"></div>
         </div>
       </div>
-      <div class="v-timeline-item__opposite">2018-12-09T05:00:34Z</div>
+      <div class="v-timeline-item__opposite">2018.12.09</div>
     </div>
     <div class="v-timeline-item v-timeline-item--before theme--light">
       <div class="v-timeline-item__body">
@@ -218,7 +218,7 @@ exports[`Home.vue renders as expected 1`] = `
           <div class="v-timeline-item__inner-dot primary"></div>
         </div>
       </div>
-      <div class="v-timeline-item__opposite">2018-10-07T07:46:13Z</div>
+      <div class="v-timeline-item__opposite">2018.10.07</div>
     </div>
   </div>
 </section>

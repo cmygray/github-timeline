@@ -5,11 +5,13 @@ import Vuetify from 'vuetify';
 
 import RepoList from '@/views/RepoList.vue';
 import { repositories } from '../__fixtures__/repositories';
+import { dateTimeToDate } from '@/filters/datetime-to-date';
 
 Vue.use(Vuetify);
 
 const localVue = createLocalVue();
 localVue.use(Vuex);
+localVue.filter('date', dateTimeToDate);
 // @ts-ignore-next-lineA
 const vuetify = new Vuetify();
 
